@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avia - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Шапка */
+        .header {
+            background: #2a2a2a;
+            color: #fff;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-height: 50px;
+            margin-right: 15px;
+        }
+
+        /* Выравнивание навигации справа */
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Главная секция */
+        .home {
+            position: relative;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('background.jpg') no-repeat center center/cover;
+            background-size: cover;
+            filter: brightness(50%);
+            z-index: -1;
+        }
+
+        .overlay {
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #ff3b3b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ff1a1a;
+        }
+
+        /* Секции */
+        .tariffs, .discounts {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .tariffs h1, .discounts h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .tariffs .tariff-card, .discounts .discount-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tariffs .tariff-card:hover, .discounts .discount-card:hover {
+            transform: scale(1.05);
+        }
+
+        .tariffs .tariff-card h3, .discounts .discount-card h3 {
+            font-size: 1.8em;
+            color: #ff3b3b;
+            margin-bottom: 15px;
+        }
+
+        .tariffs .tariff-card p, .discounts .discount-card p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Кнопки */
+        .btn-large, .tariff-card .btn-select {
+            background-color: #ffcc00;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-large:hover, .tariff-card .btn-select:hover {
+            background-color: #ff9900;
+        }
+
+        /* Форма бронирования */
+        .booking form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking input, .booking button {
+            padding: 12px;
+            font-size: 1.1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .booking button {
+            background: #ff3b3b;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .booking button:hover {
+            background: #ff1a1a;
+        }
+
+        /* Подвал */
+        .footer {
+            background: #2a2a2a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="javascript:void(0)" class="logo" onclick="showPage('home')">
+                <img src="logo.png.png" alt="Логотип">
+            </a>
+            <nav class="nav">
+                <a href="javascript:void(0)" onclick="showPage('about')">О компании</a>
+                <a href="javascript:void(0)" onclick="showPage('services')">Наши услуги</a>
+                <a href="javascript:void(0)" onclick="showPage('booking')">Бронирование</a>
+                <a href="javascript:void(0)" onclick="showPage('cancel')">Отмена брони</a>
+                <a href="javascript:void(0)" onclick="showPage('contacts')">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="home" class="page active">
+       
+        <div class="home">
+            <div class="background-image"></div>
+            <div class="overlay">
+            
+                <h1>Путешествуй с комфортом</h1>
+                <p>Мы подберем для вас лучшие варианты перелета по самым выгодным ценам!</p>
+                <a href="javascript:void(0)" onclick="showPage('booking')" class="btn">Забронировать билет</a>
+            
+           
+            
+            </div>
+        
+        </div>
+    </div>
+
+    <!-- Секция скидок -->
+    <div id="discounts" class="discounts">
+        <h1>Получите скидку 10% на вторую авиаперевозку</h1>
+        <div class="discount-card">
+            <h3>Скидка 10% на вторую перевозку</h3>
+            <p>Наша компания предоставляет услуги авиаперевозки по лучшим ценам. Забронируйте билет и получите скидку на вторую поездку. Скидка действует на все направления.</p>
+            <a href="javascript:void(0)" class="btn-large">Получить скидку</a>
+        </div>
+    </div>
+
+    <!-- Секция тарифов -->
+    <div id="tariffs" class="tariffs">
+        <h1>Тарифы на грузоперевозки</h1>
+        <div class="tariff-card">
+            <h3>Базовый</h3>
+            <p>Средние затраты на одну грузоперевозку составляют 7000 руб. Быстрая погрузка, если грузовик и кран приехали на место одновременно. <strong>от 1500 руб./час</strong></p>
+            <a href="javascript:void(0)" class="btn-select">Выбрать</a>
+        </div>
+        <div class="tariff-card">
+            <h3>Стандарт</h3>
+            <p>Средние затраты на одну грузоперевозку составляют 7000 руб. Быстрая погрузка, если грузовик и кран приехали на место одновременно. <strong>от 2000 руб./час</strong></p>
+            <a href="javascript:void(0)" class="btn-select">Выбрать</a>
+        </div>
+        <div class="tariff-card">
+            <h3>Премиум</h3>
+            <p>Средние затраты на одну грузоперевозку составляют 7000 руб. Быстрая погрузка, если грузовик и кран приехали на место одновременно. <strong>от 2500 руб./час</strong></p>
+            <a href="javascript:void(0)" class="btn-select">Выбрать</a>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
